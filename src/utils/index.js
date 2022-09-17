@@ -49,12 +49,15 @@ export const sortBirthdayTime = (list) => {
   list.forEach(item => {
      console.log("明年的日期")
     console.log(selfDayjs().format('YYYY') + '-' + (item.useLunar ? item.solarDateInThissYear : item.date))
-    const diffDay = Math.ceil(selfDayjs(selfDayjs().format('YYYY') + '-' + (item.useLunar ? item.solarDateInThisYear : item.date)).diff(selfDayjs(), 'day', true))
-    if (diffDay >= 0) {
-      item['diffDay'] = diffDay
-    } else {
-      item['diffDay'] = Math.ceil(selfDayjs(selfDayjs().add(1, 'year').format('YYYY') + '-' + (item.useLunar ? item.solarDateInThisYear : item.date)).diff(selfDayjs(), 'day', true))
-    }
+    item['diffDay'] = Math.ceil(selfDayjs('2023-09-20').diff(selfDayjs(), 'day', true))
+
+    // const diffDay = Math.ceil(selfDayjs(selfDayjs().format('YYYY') + '-' + (item.useLunar ? item.solarDateInThissYear : item.date)).diff(selfDayjs(), 'day', true))
+    // if (diffDay >= 0) {
+    //   item['diffDay'] = diffDay
+    // } else {
+    //   item['diffDay'] = Math.ceil(selfDayjs(selfDayjs().add(1, 'year').format('YYYY') + '-' + (item.useLunar ? item.solarDateInThisYear : item.date)).diff(selfDayjs(), 'day', true))
+    //   item['diffDay'] = Math.ceil(selfDayjs(selfDayjs().add(1, 'year').format('YYYY') + '-' + (item.useLunar ? item.solarDateInThisYear : item.date)).diff(selfDayjs(), 'day', true))
+    // }
   })
   return list.sort((a, b) =>
     a.diffDay > b.diffDay ? 1 : -1
