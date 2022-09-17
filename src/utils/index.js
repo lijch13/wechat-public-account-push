@@ -47,6 +47,8 @@ export const randomNum = (min, max) => {
  */
 export const sortBirthdayTime = (list) => {
   list.forEach(item => {
+     console.log("明年的日期")
+    console.log(selfDayjs().format('YYYY') + '-' + (item.useLunar ? item.solarDateInThissYear : item.date))
     const diffDay = Math.ceil(selfDayjs(selfDayjs().format('YYYY') + '-' + (item.useLunar ? item.solarDateInThisYear : item.date)).diff(selfDayjs(), 'day', true))
     if (diffDay >= 0) {
       item['diffDay'] = diffDay
