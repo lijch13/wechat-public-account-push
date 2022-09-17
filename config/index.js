@@ -60,15 +60,51 @@ export const config = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: "lijch",
+      name: "露露",
       // 扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: "olNzH5kJo2psJQRUeEdr0rGQCXKs",
+      id: "olNzH5uFm1n9eFAwSCKjepFIl2eE",
       // 你想对他发送的模板消息的模板ID
       useTemplateId: "2b_A7cDWgRlj6cneIHV7Q7CNrkj4zlSp77HcjvYYh2Y",
       // 所在省份
       province: "贵州",
       // 所在城市
       city: "六盘水",
+      // 新历生日, 仅用作获取星座运势, 格式必须
+      horoscopeDate: '09-12',
+      // 获取什么时候的星座运势，可选：['今日', '明日', '本周', '本月', '今年'], 留空则随机
+      horoscopeDateType: '今日',
+      // 他点击详情后跳转的页面,你可以设置成微博的热榜，也可以设置成其他，网址一定要填对；不填对也没关系，随便你，会打不开而已。
+      openUrl: "",
+      // 专属节日提醒，如果你在这里填写了节日提醒，就不会执行FESTIVALS的提醒了, 和FESTIVALS的配置方法相同，可以往下查看，我这里就不重复写了
+      festivals: [
+        // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
+        {"type": "生日", "name": "露露", "year": "1998", "date": "09-12"},
+        //{"type": "节日", "name": "结婚纪念日", "year": "2020", "date": "09-03"},
+        // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
+        //{"type": "生日", "name": "李四", "year": "1996", "date": "09-31"},
+        //{"type": "节日", "name": "被搭讪纪念日", "year": "2021", "date": "09-01"},
+      ],
+      // 专属纪念日/倒数日，如果你在这里填写了纪念日/倒数日，就不会计算CUSTOMIZED_DATE_LIST的日子了, 和CUSTOMIZED_DATE_LIST的配置方法相同，可以往下查看，我这里就不重复写了
+      customizedDateList: [
+        // 在一起的日子
+        //{"keyword": "love_day", date: "2022-09-08"},
+        // 结婚纪念日
+        //{"keyword": "marry_day", date: "2022-09-09"},
+        // 退伍日
+        //{"keyword": "ex_day", date: "2022-09-10"},
+      ]
+    },
+    {
+      // 想要发送的人的名字
+      name: "十三",
+      // 扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
+      id: "olNzH5kJo2psJQRUeEdr0rGQCXKs",
+      // 你想对他发送的模板消息的模板ID
+      useTemplateId: "2b_A7cDWgRlj6cneIHV7Q7CNrkj4zlSp77HcjvYYh2Y",
+      // 所在省份
+      province: "北京",
+      // 所在城市
+      city: "北京",
       // 新历生日, 仅用作获取星座运势, 格式必须
       horoscopeDate: '09-12',
       // 获取什么时候的星座运势，可选：['今日', '明日', '本周', '本月', '今年'], 留空则随机
