@@ -381,6 +381,8 @@ export const getDateDiffList = (customizedDateList) => {
 
   dateList.forEach(item => {
     item['diffDay'] = Math.ceil(selfDayjs().diff(selfDayjs(item.date), 'day', true))
+    console.log(item.date)
+    console.log(item['diffDay'])
     if (item['diffDay'] <= 0) {
       item['diffDay'] = Math.abs(Math.floor(selfDayjs().diff(selfDayjs(item.date), 'day', true)))
     }
